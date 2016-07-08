@@ -29,8 +29,8 @@ train_data <- cbind(train_activities, train_subjects, train_data)
 full_data <- rbind(test_data, train_data)
 
 # Extract only the mean and standard deviation features for each measurements
-desired_features <- features[grep("(mean\\(|std\\()", features$name),'id'] + 1
-final_data <- full_data[,c(1, desired_features)]
+desired_features <- features[grep("(mean\\(|std\\()", features$name),'id'] + 2
+final_data <- full_data[,c(1, 2, desired_features)]
 
 # Replace activity ids with their actual names
 final_data$activityid <- activities[['name']][final_data$activityid]
