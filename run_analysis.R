@@ -43,4 +43,4 @@ colnames(final_data) <- tolower(gsub('\\.', '', names(final_data)))
 grouped <- group_by(final_data, activity, subject)
 summarized <- summarise_each(grouped, funs(mean))
 
-summarized
+write.csv(summarized, file = 'tidydata.csv')
